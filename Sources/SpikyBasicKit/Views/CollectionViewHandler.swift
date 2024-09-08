@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class CollectionViewHandler<Model: CellModel>: TemplateView, UICollectionViewDelegate, UICollectionViewDataSource, Configurable {
+open class CollectionViewHandler<Model: CellModel>: TemplateView, UICollectionViewDelegate, UICollectionViewDataSource, Configurable {
     var model = Model()
     
     lazy var collectionView = UICollectionView(

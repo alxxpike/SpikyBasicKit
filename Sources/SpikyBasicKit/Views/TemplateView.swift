@@ -8,13 +8,13 @@
 import UIKit
 
 /// Common parent UIView class
-public class TemplateView: UIView {
+open class TemplateView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         prepare()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -23,13 +23,13 @@ public class TemplateView: UIView {
 }
 
 /// Common parent UIView class
-public class TemplateButton: UIButton {
+open class TemplateButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         prepare()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

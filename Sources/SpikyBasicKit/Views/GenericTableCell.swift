@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class GenericTableCell<View>: UITableViewCell where View: UIView {
+final public class GenericTableCell<View>: UITableViewCell where View: UIView {
 
     var wrappedView: View?
     var insets: UIEdgeInsets = .zero {
@@ -23,12 +23,12 @@ final class GenericTableCell<View>: UITableViewCell where View: UIView {
     }
     
     @discardableResult
-    override func becomeFirstResponder() -> Bool {
+    public override func becomeFirstResponder() -> Bool {
         return wrappedView?.becomeFirstResponder() ?? false
     }
     
     @discardableResult
-    override func resignFirstResponder() -> Bool {
+    public override func resignFirstResponder() -> Bool {
         return wrappedView?.resignFirstResponder() ?? false
     }
     

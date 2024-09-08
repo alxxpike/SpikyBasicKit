@@ -7,7 +7,7 @@
 
 import UIKit
 
-public class TableViewHandler<Model: CellModel>: TemplateView, UITableViewDelegate, UITableViewDataSource, Configurable {
+open class TableViewHandler<Model: CellModel>: TemplateView, UITableViewDelegate, UITableViewDataSource, Configurable {
     var model = Model()
     lazy var tableView: UITableView = UITableView().with {
         $0.delegate = self

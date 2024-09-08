@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class GenericCollectionCell<View>: UICollectionViewCell where View: UIView {
+public final class GenericCollectionCell<View>: UICollectionViewCell where View: UIView {
     
     weak var wrappedView: View?
     
