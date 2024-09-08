@@ -8,9 +8,9 @@
 import UIKit
 
 open class CollectionViewHandler<Model: CellModel>: TemplateView, UICollectionViewDelegate, UICollectionViewDataSource, Configurable {
-    var model = Model()
+    public var model = Model()
     
-    lazy var collectionView = UICollectionView(
+    public lazy var collectionView = UICollectionView(
         frame: .zero,
         collectionViewLayout: UICollectionViewFlowLayout()
     ).with {
@@ -21,12 +21,12 @@ open class CollectionViewHandler<Model: CellModel>: TemplateView, UICollectionVi
         ($0.collectionViewLayout as? UICollectionViewFlowLayout)?.scrollDirection = .vertical
     }
     
-    var layout: UICollectionViewLayout {
+    public var layout: UICollectionViewLayout {
         get { collectionView.collectionViewLayout }
         set { collectionView.collectionViewLayout = newValue }
     }
     
-    var flowLayout: UICollectionViewFlowLayout? {
+    public var flowLayout: UICollectionViewFlowLayout? {
         get { collectionView.collectionViewLayout as? UICollectionViewFlowLayout }
     }
     
@@ -48,18 +48,18 @@ open class CollectionViewHandler<Model: CellModel>: TemplateView, UICollectionVi
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {}
     
     /// Abstract method. Must me overriden!
-    func cell(_ model: Model.Cell, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
+    open func cell(_ model: Model.Cell, collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
         return .empty()
     }
     
     ///  Always call super.configure
-    public func configure(_ model: Model) {
+    open func configure(_ model: Model) {
         self.model = model
         collectionView.reloadData()
     }
 }
 
-extension UICollectionViewCell {
+public extension UICollectionViewCell {
     static func empty() -> UICollectionViewCell {
         return GenericCollectionCell<UIView>()
     }

@@ -8,8 +8,8 @@
 import UIKit
 
 open class TableViewHandler<Model: CellModel>: TemplateView, UITableViewDelegate, UITableViewDataSource, Configurable {
-    var model = Model()
-    lazy var tableView: UITableView = UITableView().with {
+    public var model = Model()
+    public lazy var tableView: UITableView = UITableView().with {
         $0.delegate = self
         $0.dataSource = self
         $0.separatorStyle = .none
@@ -39,17 +39,17 @@ open class TableViewHandler<Model: CellModel>: TemplateView, UITableViewDelegate
     }
     
     /// Abstract method. Must me overriden!
-    func cell(_ model: Model.Cell, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
+    open func cell(_ model: Model.Cell, tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         return .empty()
     }
 
     /// Abstract method.
-    func height(_ model: Model.Cell) -> CGFloat {
+    open func height(_ model: Model.Cell) -> CGFloat {
         return UITableView.automaticDimension
     }
     
     ///  Always add super.configure
-    public func configure(_ model: Model) {
+    open func configure(_ model: Model) {
         self.model = model
         tableView.reloadData()
     }

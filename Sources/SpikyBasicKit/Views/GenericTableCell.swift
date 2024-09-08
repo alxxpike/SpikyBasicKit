@@ -9,8 +9,8 @@ import UIKit
 
 final public class GenericTableCell<View>: UITableViewCell where View: UIView {
 
-    var wrappedView: View?
-    var insets: UIEdgeInsets = .zero {
+    public var wrappedView: View?
+    public var insets: UIEdgeInsets = .zero {
         didSet {
             edges?.setInsets(insets)
         }

@@ -19,7 +19,7 @@ open class TemplateView: UIView {
     }
     
     /// Virtual method to override. Is called during initialization.
-    func prepare() {}
+    open func prepare() {}
 }
 
 /// Common parent UIView class
@@ -34,5 +34,5 @@ open class TemplateButton: UIButton {
     }
     
     /// Virtual method to override. Is called during initialization.
-    func prepare() {}
+    open func prepare() {}
 }

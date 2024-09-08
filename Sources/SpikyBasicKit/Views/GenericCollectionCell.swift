@@ -9,7 +9,7 @@ import UIKit
 
 public final class GenericCollectionCell<View>: UICollectionViewCell where View: UIView {
     
-    weak var wrappedView: View?
+    public weak var wrappedView: View?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
